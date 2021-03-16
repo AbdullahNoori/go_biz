@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello world</title>
+    <title>Durani Clothing</title>
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
   </head>
   <body>
     <div class="content">
+
+      <label>Quantity</label>
+      <input id="quantity" type="number"></input
+      <label>Frame color</label>
+      <select id="frame_color">
+        <option value="Black">Black</option>
+        <option value="Brown">Brown</option>
+        <option value="Gold">Gold</option>
+      </select>
+      <button
+        id="starry-night"
+        class="snipcart-add-item"
+        data-item-id="starry-night"
+        data-item-price="79.99"
+        data-item-url="/paintings/starry-night"
+        data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+        data-item-image="/assets/images/starry-night.jpg"
+        data-item-name="The Starry Night"
+        data-item-custom1-name="Frame color"
+        data-item-custom1-options="Black|Brown|Gold"
+        data-item-custom2-name="Gift note">
+        Add to cart
+      </button>
+
+
+
+
       Your site content here
     </div>
 
+
+  <script>
+    const button = document.querySelector('#starry-night')
+    const quantity = document.querySelector('#quantity')
+    quantity.addEventListener('change', () => {
+      // Sets the default quantity when adding the item
+      button.setAttribute('data-item-quantity', quantity.value)
+    })
+    const select = document.querySelector('#frame_color')
+    select.addEventListener('change', () => {
+      // Sets the default frame color when adding the item
+      button.setAttribute("data-item-custom1-value", select.value)
+    })
+    </script>
     <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
     <div hidden id="snipcart" data-api-key="MTc5N2RhODYtZGZiYS00OTczLWE3MGItN2UwYTc2NjAwYmIyNjM3NTE0NTE0NTgzMDc3NzM1"></div>
     <div hidden id="snipcart" data-api-key="<MTc5N2RhODYtZGZiYS00OTczLWE3MGItN2UwYTc2NjAwYmIyNjM3NTE0NTE0NTgzMDc3NzM1>" data-config-modal-style="side"></div>
